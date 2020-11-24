@@ -3,9 +3,9 @@ package Lec_03;
 import java.util.Scanner;
 
 class Book{
-	String name;
-	int page;
-	int year;
+	private String name;
+	private int page;
+	private int year;
 	
 	public Book(String name, int page, int year) {
 		this.name = name;
@@ -42,7 +42,7 @@ class BookControl{
 	static Book findBook(String title, Book[] arr) {
 		Book book = null;
 		for (int i = 0; i < arr.length; i++) {
-			if (title.equals(arr[i].name)) {
+			if (title.equals(arr[i].getName())) {
 				book = arr[i];
 				break;
 			}

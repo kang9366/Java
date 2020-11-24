@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class Answer_03 {
 	static boolean search(int[] arr, int number) {
-		boolean a = true;
-		if(arr[number] == 1) {
-			return a;
+		if(arr[number] == 0) {
+			arr[number] = 1;
+			return true;
 		}else {
-			a = false;
-			return a;
+			return false;
 		}
 	}
 	
@@ -29,7 +28,9 @@ public class Answer_03 {
 			if(number <= 0)
 				break;
 			if (search(seat, number - 1))  
+			{
 				System.out.println("예약 완료");
+			}
 			else
 				System.out.println("예약 불가 : 예약된 좌석");
 

@@ -11,6 +11,5 @@ public class Test {
 		ic.methodA();
 		ic.methodB();
 		ic.methodC();
-		
 	}
 }

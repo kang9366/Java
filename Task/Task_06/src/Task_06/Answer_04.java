@@ -8,7 +8,7 @@ abstract class Animal {
 	public String getType() {
 		return type;
 	}
-	abstract void run(); 
+	abstract void run();
 	abstract void sound();
 }
 
@@ -16,29 +16,24 @@ class Baby extends Animal{
 	public Baby(String type) {
 		super(type);
 	}
-
 	@Override
 	void run() {
 		System.out.println("±â¾î´Ù´Õ´Ï´Ù.");
 	}
-
 	@Override
 	void sound() {
 		System.out.println("¿Ë¾ËÀÌ¸¦ ÇÕ´Ï´Ù.");
 	}
-	
 }
 
 class Dog extends Animal{
 	public Dog(String type) {
 		super(type);
 	}
-
 	@Override
 	void run() {
 		System.out.println("³× ¹ß·Î ´Ù´Õ´Ï´Ù.");
 	}
-
 	@Override
 	void sound() {
 		System.out.println("¸Û¸Û ¼Ò¸®¸¦ ³À´Ï´Ù.");

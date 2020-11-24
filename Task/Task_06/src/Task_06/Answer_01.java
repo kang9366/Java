@@ -31,7 +31,7 @@ class Rectangle extends Shape {
 	  
 	double area() { 
 		return d1 * d2; 
-	  }
+	}
 	  
 	void write() {
 	    System.out.print("Rectangle[가로="+d1+"\t세로="+ d2);

@@ -13,3 +13,4 @@ class Ano {
 	void method1(Person per) {
 		per.wake();
 	}
+}
