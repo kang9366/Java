@@ -3,7 +3,7 @@ package Test;
 class SharedResource {
 	long nF1 = 1, nF2 = 1, nResult = 0;
 
-	public synchronized void changeShared(String srName) { // ÀÓ°è¿µ¿ª
+	public synchronized void changeShared(String srName) { // ï¿½Ó°è¿µï¿½ï¿½
 		nResult = nF1 + nF2;
 		for (long l = 0; l < 10000000; l++) {
 		}
