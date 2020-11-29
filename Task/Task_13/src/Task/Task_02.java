@@ -7,7 +7,7 @@ public class Task_02 {
 	public static void main(String[] args) {
 		String[] s = { "사과", "배", "바나나" };
 		ArrayList list = new ArrayList(Arrays.asList(s));
-		
+	
 		//1
 		list.add("포도");
 		
