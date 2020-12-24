@@ -1,8 +1,8 @@
 package Lec_NestedClass;
 
-class Out{
+class Outs{
 	private int outField;
-	Out(){
+	Outs(){
 		System.out.println("create Out class instance");
 	}
 	class In{
@@ -22,8 +22,8 @@ class Out{
 
 public class NestedClass_instance {
 	public static void main(String[] args) {
-		Out out = new Out();
-		Out.In in = out.new In();
+		Outs out = new Outs();
+		Outs.In in = out.new In();
 		in.inField = 30;
 		in.inMethod();
 	}

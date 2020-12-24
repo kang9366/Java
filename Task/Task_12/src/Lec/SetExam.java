@@ -5,7 +5,6 @@ import java.util.*;
 public class SetExam {
 	public static void main(String[] args) {
 		Set<String> set = new HashSet<String>(); 
-	     
 	    set.add("Milk"); 
 	    set.add("Bread"); 
 	    set.add("Butter"); 

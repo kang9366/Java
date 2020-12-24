@@ -6,9 +6,9 @@ class Count{
 	public static Map<Integer, Integer> count() {
 		Map<Integer, Integer> map = new HashMap<>();
 		
-		Integer[] num = new Integer[100];
+		int[] num = new int[100];
 		
-		for(int i = 0; i < 100; i++) {
+		for(int i = 0; i < num.length; i++) {
 			num[i] = (int) (Math.random()*6) + 1;
 		}
 		
@@ -30,6 +30,7 @@ public class Task_03{
 	public static void main(String[] args) {
 		Map<Integer, Integer> map;
 		map = Count.count();
+		System.out.println(map);
 		System.out.println("Map에 저장된 빈도수를 출력합니다.");
 		Count.write(map);
 	}

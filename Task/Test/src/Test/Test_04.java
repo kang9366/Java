@@ -1,42 +1,60 @@
 package Test;
 
-class SharedResource {
-	long nF1 = 1, nF2 = 1, nResult = 0;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Vector;
 
-	public synchronized void changeShared(String srName) { // �Ӱ迵��
-		nResult = nF1 + nF2;
-		for (long l = 0; l < 10000000; l++) {
-		}
-		nF2 = nF1;
-		for (long l = 0; l < 10000000; l++) {
-		}
-		nF1 = nResult;
-		System.out.println(srName + ":" + nResult);
-	}
-}
-
-class MyThread extends Thread {
-	SharedResource sr;
-	String srName;
-
-	public MyThread(String srName, SharedResource sr) {
-		this.srName = srName;
-		this.sr = sr;
-	}
-	public void run() {
-		for (int i = 0; i < 5; i++)
-			sr.changeShared(srName);
-	}
-}
-
-public class Test_04 {
+public class Test_04{
 	public static void main(String[] args) {
-		SharedResource res = new SharedResource();
-		MyThread my_thread1 = new MyThread("thd1", res);
-		MyThread my_thread2 = new MyThread("thd2", res);
-		MyThread my_thread3 = new MyThread("thd3", res);
-		my_thread1.start();
-		my_thread2.start();
-		my_thread3.start();
+		Scanner sc = new Scanner(System.in);
+		List<String> name = new Vector<String>();
+		List<Integer> kor = new Vector<Integer>();
+		List<Integer> eng = new Vector<Integer>();
+		List<Integer> math = new Vector<Integer>();
+		
+		while(true) {
+			System.out.print("이름 : ");
+			String n = sc.next();
+			if(n.equals("그만")) {
+				System.out.println("입력을 종료합니다.----------");
+				System.out.println("이름\t국어\t영어\t수학\t합계\t평균\t학점\t석차");
+				for (int i = 0; i < name.size(); i++) {
+					int sum = kor.get(i) + eng.get(i) + math.get(i);
+					double avg = sum/3;
+					char grade;
+					int rank;
+					if(avg > 90) {
+						grade = 'A';
+					}else if(avg > 80){
+						grade = 'B';
+					}else if(avg > 70) {
+						grade = 'C';
+					}else if(avg > 60) {
+						grade = 'D';
+					}else {
+						grade = 'F';
+					}
+					if(avg > 99) {
+						rank = 1;
+					}else if(avg > 95) {
+						rank = 2;
+					}else if(avg > 83) {
+						rank = 3;
+					}else {
+						rank=4;
+					}
+					System.out.println(name.get(i) + "\t" + kor.get(i) + "\t" + eng.get(i) + "\t" + math.get(i) + "\t" + sum + "\t" + avg + "\t" + grade + "\t" + rank);
+				}
+				break;
+			}else {
+				name.add(n);
+				System.out.print("국어 : ");
+				kor.add(sc.nextInt());
+				System.out.print("영어 : ");
+				eng.add(sc.nextInt());
+				System.out.print("수학 : ");
+				math.add(sc.nextInt());
+			}
+		}
 	}
 }

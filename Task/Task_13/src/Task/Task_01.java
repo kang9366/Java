@@ -10,7 +10,6 @@ public class Task_01{
 			int num = (int)(Math.random()*90) + 10;
 			set.add(num);
 		}
-		
 		System.out.println(set);
 	}
 }

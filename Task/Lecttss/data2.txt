@@ -1,6 +1,0 @@
-number: 1
- Course ID: 1 Course Name: 1 Course Faculty: 1 Course Level: 1 Course Professor: 1
-
-number: 2
- Course ID: 2 Course Name: 2 Course Faculty: 2 Course Level: 2 Course Professor: 2
-

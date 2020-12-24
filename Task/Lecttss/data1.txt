@@ -1,6 +1,0 @@
-number: 1
-Student ID: 1Student Name: 1Student Address: 1Student Department: 1Course ID: 1
-
-number: 2
-Student ID: 2Student Name: 2Student Address: 2Student Department: 2Course ID: 2
-

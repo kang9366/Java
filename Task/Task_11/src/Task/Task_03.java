@@ -43,7 +43,7 @@ class NumThread extends Thread{
 public class Task_03 {
 	public static void main(String[] args) {
 		int num = (int)(Math.random() * 21 + 1);
-		Thread cht = new CharThread(new char[] {'¡Ş', '¡à'}, num);
+		Thread cht = new CharThread(new char[] {'ã…', 'ã…‡'}, num);
 		Thread nut = new NumThread(num);
 		cht.start();
 		nut.start();

@@ -27,18 +27,18 @@ public class Task_03 {
 		MyArray<Double> arr2 = new MyArray<>(new Double[] {2.3, 1.2, 67.3, 45.2, 4.2, 66.4});
 		MyArray<Character> arr3 = new MyArray<>(new Character[] {'d', 'r', 'q', 'y', 'p', 'b', 's'});
 		
-		System.out.println("- Integer ¹è¿­ ¿ø¼Ò Ãâ·Â -");
+		System.out.println("- Integer ë°°ì—´ ì›ì†Œ ì¶œë ¥ -");
 		arr1.display();
-		System.out.println("\n- Double ¹è¿­ ¿ø¼Ò Ãâ·Â -");
+		System.out.println("\n- Double ë°°ì—´ ì›ì†Œ ì¶œë ¥ -");
 		arr2.display();
-		System.out.println("\n- Character ¹è¿­ ¿ø¼Ò Ãâ·Â -");
+		System.out.println("\n- Character ë°°ì—´ ì›ì†Œ ì¶œë ¥ -");
 		arr3.display();
 		
-		System.out.print("\n-------- Integer ¹è¿­ Ã¹¹øÂ°¿Í ¸¶Áö¸· ¿ø¼Ò : ");
+		System.out.print("\n-------- Integer ë°°ì—´ ì²«ë²ˆì§¸ì™€ ë§ˆì§€ë§‰ ì›ì†Œ : ");
 		System.out.println(arr1.firstE() + " / " + arr1.lastE());
-		System.out.print("-------- Double ¹è¿­ Ã¹¹øÂ°¿Í ¸¶Áö¸· ¿ø¼Ò : ");
+		System.out.print("-------- Double ë°°ì—´ ì²«ë²ˆì§¸ì™€ ë§ˆì§€ë§‰ ì›ì†Œ : ");
 		System.out.println(arr2.firstE() + " / " + arr2.lastE());
-		System.out.print("-------- Character ¹è¿­ Ã¹¹øÂ°¿Í ¸¶Áö¸· ¿ø¼Ò : ");
+		System.out.print("-------- Character ë°°ì—´ ì²«ë²ˆì§¸ì™€ ë§ˆì§€ë§‰ ì›ì†Œ : ");
 		System.out.println(arr3.firstE() + " / " + arr3.lastE());
 	}
 }

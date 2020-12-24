@@ -9,7 +9,7 @@ public class Task_01_1 {
 		try {
 			System.out.println("array[array.length] : " + array[array.length]);
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("ArrayIndexOutOfBoundsException 예외 발생");
+			System.out.println("ArrayIndexOutOfBoundsException 諛쒖깮");
 		}
 	}
 }

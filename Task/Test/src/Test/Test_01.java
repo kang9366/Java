@@ -1,78 +1,59 @@
 package Test;
 
-abstract class Tool{
-	private String type;
-	Tool(String type){
-		this.type = type;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Vector;
+
+import javax.swing.plaf.synth.SynthToolTipUI;
+
+class Student{
+	String name;
+	String major;
+	int id;
+	double score;
+	
+	Student(String name, String major, int id, double score){
+		this.name = name;
+		this.major = major;
+		this.id = id;
+		this.score = score;
 	}
 	
-	String getType() {
-		return type;
+	public void write() {
+		System.out.println(name + ", " + major + ", " + id + ", " + score);
 	}
-	
-	void write() {
-		System.out.println("type >> " + type);
-	}
-	abstract void cut();
-	abstract void dry();
 }
 
-class Hair extends Tool{
-	private String color;
-	
-	public Hair(String color, String type) {
-		super(type);
-		this.color = color;
-	}
-	
-	@Override
-	void write() {
-		super.write();
-		System.out.println("color >> " + color);
-	}
-	@Override
-	void cut() {
-		System.out.println(super.getType() + "À» ÀÚ¸¨´Ï´Ù.");
-	}
-	@Override
-	void dry() {
-		System.out.println(super.getType() + "À» ¸»¸³´Ï´Ù.");
-	}
-	
-}
-
-class Paper extends Tool{
-	private String size;
-	
-	public Paper(String size, String type) {
-		super(type);
-		this.size = size;
-	}
-	
-	@Override
-	void write() {
-		super.write();
-		System.out.println("size >> " + size);
-	}
-	@Override
-	void cut() {
-		System.out.println(super.getType() + "À» ÀÚ¸¨´Ï´Ù.");
-	}
-	@Override
-	void dry() {
-		System.out.println(super.getType() + "À» ¸»¸³´Ï´Ù.");
-	}
-}
 public class Test_01{
-	public static void run(Tool[] tool) {
-		for(int i = 0; i < tool.length; i++) {
-			if(tool[i] instanceof Hair) {
-				tool[i].cut();
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList<Student> list = new ArrayList<Student>();
+		int cnt = 0;
+		while(true) {
+			list.add(new Student(sc.next(), sc.next(), sc.nextInt(), sc.nextDouble()));
+			cnt++;
+			if(cnt==3)
+				break;
+		}
+		for(int i=0; i<list.size(); i++) {
+			System.out.println("-----------------------");
+			System.out.println("ì´ë¦„ : " + list.get(i).name);
+			System.out.println("í•™ê³¼ : " + list.get(i).major);
+			System.out.println("í•™ë²ˆ : " + list.get(i).id);
+			System.out.println("í•™ì  : " + list.get(i).score);
+		}
+		System.out.println("-----------------------");
+		
+		while(true) {
+			String temp = sc.next();
+			if(temp=="ê·¸ë§Œ")
+				break;
+			for (int i = 0; i < list.size(); i++) {
+				if(list.get(i).name.equals(temp)) {
+					list.get(i).write();
+				}
 			}
 		}
 	}
-	public static void main(String[] args) {
-		Tool[] tool = {new Hair("¸Ó¸®", "°ËÀº»ö"), new Paper("Á¾ÀÌ", "A3")};
-		run(tool);
-		}
 }

@@ -1,7 +1,7 @@
 package Lec_NestedClass;
 
-class Out{
-	Out(){
+class Outt{
+	Outt(){
 		System.out.println("create Out class instance");
 	}
 	void method() {

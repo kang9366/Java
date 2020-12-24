@@ -1,22 +1,21 @@
 package Test;
 
-class GenericTest<T>{
-	private T name;
-	private T age;
-	
-	public GenericTest(T name, T age){
-		this.name = name;
-		this.age=  age;
-	}
-	
-	public String toString() {
-		return "age : " + age + "name : " + name;
-	}
-}
-
 public class Test_03{
-	public static void main(String args[]) {
-		GenericTest<String> g1 = new GenericTest("kang", 20);
-		g1.toString();
+	public static void main(String[] args) {
+		int[] num = new int[10];
+		for (int i = 0; i < num.length; i++) {
+			num[i] = (int) (Math.random()*100) + 1;
+		}
+		
+		for (int i = 0; i < num.length; i++) {
+			for (int j = i+1; j < num.length; j++) {
+				if (num[i] > num[j]) {
+					int temp = num[i];
+					num[i] = num[j];
+					num[j] = temp;
+				}
+			}
+			System.out.println((i+1) + " : " + num[i]);
+		}
 	}
 }

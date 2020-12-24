@@ -12,7 +12,6 @@ public class SubStream {
 		write("문자 변환 스트림 사용");
 		String data = read();
 		System.out.println(data);
-		
 	}
 	
 	public static void write(String str) throws Exception{

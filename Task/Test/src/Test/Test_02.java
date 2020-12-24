@@ -2,31 +2,32 @@ package Test;
 
 import java.util.Scanner;
 
-public class Test_02 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		String[] endList = { "Áö±Ý", "±Ý¼öÀú", "ÀúÀå", "°­»ê", "»êÃ¥", "Ã¥ÀÓ" }; // ÀÌ°Ç ÃëÇâ¿¡ ¸Â°Ô
-		String word = "", input = "", choice = "";
-		while (true) {
-			System.out.println("³¡¸» ÀÕ±â °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù~~~");
-			word = endList[(int) (Math.random() * endList.length)];
-			while (true) {
-				System.out.printf("%sÀÇ %s·Î ½ÃÀÛÇÏ´Â ´Ü¾î >> ", word, word.charAt(word.length() - 1));
-				input = sc.next();
-				if (word.charAt(word.length() - 1) == input.charAt(0)) {
-					word = input;
-				} else {
-					System.out.println("Æ²·È½À´Ï´Ù.");
-					break;
-				}
-			}
-			System.out.print("°è¼ÓÇÏ°Ú½À´Ï±î? >> ");
-			choice = sc.next();
-			if (!choice.toLowerCase().equals("c")) {
-				System.out.println("°ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.");
+class T1 extends Thread{
+	boolean flag;
+	
+	public void stop(boolean flag) {
+		this.flag = flag;
+	}
+	
+	public void run() {
+		while(true) {
+			System.out.println(1);
+			if(flag) {
 				break;
 			}
 		}
-		sc.close();
+	}
+}
+
+public class Test_02{
+	public static void main(String[] args) throws Exception {
+		T1 thread1 = new T1();
+		System.out.println(Thread.currentThread().getName());
+		try {
+			thread1.start();
+			thread1.sleep(500);
+		} catch (Exception e) {}
+			thread1.stop(true);
+			System.out.println("ìŠ¤ë ˆë“œ ì¢…ë£Œ");
 	}
 }

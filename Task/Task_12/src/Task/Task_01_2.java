@@ -1,11 +1,11 @@
 package Task;
 
 public class Task_01_2 {
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		try {
 			sub();
 		} catch (Exception e) {
-			System.out.println("ArrayIndexOutOfBoundsException 예외 발생");
+			System.out.println("ArrayIndexOutOfBoundsException 諛쒖깮");
 		}
 	}
 	public static void sub() throws ArrayIndexOutOfBoundsException{
